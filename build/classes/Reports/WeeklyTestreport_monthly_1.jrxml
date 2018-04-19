@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Grade" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Month" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from WeeklyTestTable where  Class='XI-B' AND month(Date_of_Entry)=10 order by Roll_No]]>
+	</queryString>
+	<field name="Roll_No" class="java.lang.Integer"/>
+	<field name="Class" class="java.lang.String"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Date_of_Entry" class="java.sql.Date"/>
+	<field name="Marks" class="java.lang.Double"/>
+	<field name="Subject" class="java.lang.String"/>
+	<variable name="RowCount" class="java.lang.String" calculation="Count"/>
+	<variable name="variable1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{Marks}]]></variableExpression>
+	</variable>
+	<group name="RollNo" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{Roll_No}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="175" splitType="Stretch">
+			<textField>
+				<reportElement x="102" y="116" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Roll_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="54" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="85" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Class}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="150" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Month}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="23" width="555" height="24"/>
+				<textElement textAlignment="Center">
+					<font size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[WEEKLY TESTS REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="54" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="85" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Class:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="116" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Roll Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="150" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Month:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="0" width="555" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SIR SYED COACHING CENTER]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="30"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="195" y="0" width="154" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="0" width="191" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="207" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Entry]]></text>
+			</staticText>
+			<line>
+				<reportElement x="194" y="0" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="349" y="0" width="1" height="30"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField pattern="d/M/yyyy">
+				<reportElement x="373" y="4" width="155" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date_of_Entry}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="4" width="171" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="4" width="132" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marks}+"/15"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="555" y="-2" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="0" y="27" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement x="349" y="-2" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-2" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement x="194" y="-2" width="1" height="29"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

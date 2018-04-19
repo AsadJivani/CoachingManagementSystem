@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FeeReceipt" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ad492a8c-8bdd-48fb-9902-dbb8c97e3afb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="F.Name" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Grade" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Roll_No" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Amount" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fee_package" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fee_paid" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fee_left" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Roll_No" class="java.lang.Integer"/>
+	<field name="Date_of_admission" class="java.sql.Date"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Father_Name" class="java.lang.String"/>
+	<field name="Class" class="java.lang.String"/>
+	<field name="Contact" class="java.lang.String"/>
+	<field name="Address" class="java.lang.String"/>
+	<field name="Fee" class="java.lang.Integer"/>
+	<field name="Fee_Package" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="802">
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="23" uuid="065ecd1f-5308-4f9e-bed5-cac9b87c934f"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[SIR SYED COACHING CENTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="24" width="555" height="28" uuid="8425266f-54f3-43e6-8afc-6ce5f4b58bee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Student Fee Reciept]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="174" height="20" uuid="a442f402-bd39-47f3-af77-e2d01551ce17"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NAME                                :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="119" width="174" height="20" uuid="4ada73d0-060b-46d9-9ddd-a8effea035ba"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FATHER NAME                 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="146" width="186" height="20" uuid="d86bd112-f6b9-4fe0-b67b-f33ef1cf312f"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ROLL NO                           : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="175" width="186" height="20" uuid="f916928f-a093-4ed2-b49d-2d29c51bec29"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CLASS                               :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="90" width="369" height="20" uuid="b8b3f464-3e25-44b1-826a-883836106d33"/>
+				<textElement textAlignment="Justified">
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                                                                    $P{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="119" width="369" height="20" uuid="068217ee-eac1-4194-9d3b-36ce84abf5e5"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                                                           $P{F.Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="146" width="369" height="20" uuid="533df17f-f7c8-4c84-825c-4f4e4c4dc2b2"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                                                                     $P{Roll_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="175" width="369" height="20" uuid="4d2835e6-f747-43b8-8b7e-5392c41dfde8"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                                                                $P{Grade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="243" width="174" height="20" uuid="bc710477-7b04-4cad-a447-168442c13edc"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TOTAL AMOUNT               :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="243" width="369" height="20" uuid="ae281263-409b-43e1-9bf9-a972d26c2e7b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                   $P{Amount}+" Rupees /="]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="363" width="153" height="1" uuid="2edcc083-8954-4c3d-a332-97fc67bb78c5"/>
+			</line>
+			<line>
+				<reportElement x="386" y="365" width="154" height="1" uuid="9ed64d9d-7e9a-4f9c-9d81-cb5555f4fabe"/>
+			</line>
+			<staticText>
+				<reportElement x="17" y="364" width="123" height="20" uuid="936ccfa1-f1b2-4ae6-87fb-2c34ee57a20d"/>
+				<textElement>
+					<font size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Reciever`s Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="364" width="126" height="20" uuid="abff4919-3ba2-40bb-a60d-599f89f8a1af"/>
+				<textElement>
+					<font size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Accountant Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="555" height="20" uuid="b6604192-48b1-4eef-b1c3-717207bdc68a"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[STUDENT COPY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="210" width="174" height="20" uuid="ab07e640-dd14-49e1-9efb-08ff57a958e1"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FEE PACKAGE                  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="210" width="369" height="20" uuid="a5a7ac6d-48fb-4832-a11c-aea2db383e7c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[                   $P{Fee_package}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="273" width="174" height="20" uuid="f6324623-0258-49dd-a01b-eaa6ab367c44"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PAID AMOUNT                  :  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="303" width="174" height="20" uuid="83b599e5-67bf-4f30-9d36-d462f5a18737"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[REMAINING AMOUNT      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="406" width="555" height="23" uuid="444424fa-3975-453a-9da6-a9679476124a"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[SIR SYED COACHING CENTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="429" width="555" height="28" uuid="1cdea124-b1d4-446a-82c2-31b926e37c4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Student Fee Reciept]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="495" width="126" height="20" uuid="f233fc62-ffa3-46da-805b-9b23682f77da"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NAME:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="524" width="126" height="20" uuid="b4a474b6-0b08-4076-96b0-c1e5b4cc7cb1"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FATHER NAME:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="551" width="126" height="20" uuid="bc3c1044-100f-4554-83db-3ad27500697e"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ROLL NO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="580" width="126" height="20" uuid="ecdec3f7-27c4-49e1-90c0-bf31426373b6"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CLASS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="495" width="369" height="20" uuid="48e9f041-acd1-49f9-b5d9-3ad78269390a"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="524" width="369" height="20" uuid="4e444fd3-ce30-4770-b796-ed6337450d8d"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{F.Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="551" width="369" height="20" uuid="ac41ec79-5231-4ba5-8833-ed8af6940901"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Roll_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="580" width="369" height="20" uuid="b5c6daa6-555e-43b3-b648-5508b20d1fba"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Grade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="648" width="126" height="20" uuid="9a41c76f-2e8b-4560-a23f-e1d33051feb8"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[TOTAL AMOUNT:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="648" width="369" height="20" uuid="d8dab28a-dc59-45f6-a1b2-ab813b498d18"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Amount}+" Rupees /="]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="764" width="153" height="1" uuid="f73c2909-51c8-4db1-a981-99a96e6c9368"/>
+			</line>
+			<line>
+				<reportElement x="386" y="766" width="154" height="1" uuid="a72e61d7-5440-4e0f-ad93-f9a4358a8b9b"/>
+			</line>
+			<staticText>
+				<reportElement x="27" y="765" width="123" height="20" uuid="4c90b794-615a-4c99-9784-926910e61c47"/>
+				<textElement>
+					<font size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Reciever`s Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="766" width="126" height="20" uuid="a9bb2d0a-87bb-4d64-9b72-6f5836c2bcef"/>
+				<textElement>
+					<font size="13"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Accountant Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="457" width="555" height="20" uuid="1e95edfa-dc6c-454e-bd33-9dd96f2dcbba"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[OFFICE COPY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="615" width="126" height="20" uuid="a68dd92d-de76-4976-9efd-723513995848"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FEE PACKAGE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="615" width="369" height="20" uuid="4f68fb68-2ec6-453d-b500-100ff5363fd6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Fee_package}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="678" width="150" height="20" uuid="96f263aa-cf5b-40da-983d-40b6a82896af"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[PAID AMOUNT:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="708" width="150" height="20" uuid="f772263a-dd74-46a4-b761-041102fc84c8"/>
+				<textElement>
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[REMAINING AMOUNT:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="186" y="273" width="369" height="20" uuid="bc34ca51-8a85-4655-b15b-db71884a33cf"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[      $P{Fee_paid}+" Rupees /="]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="303" width="369" height="20" uuid="3a170b4a-bab2-4174-a360-3c2f4ee638a1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[       $P{Fee_left}+" Rupees /="]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="708" width="369" height="20" uuid="0008b1f1-1d04-4c44-bbf3-77688f21b95e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Fee_left}+" Rupees /="]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="678" width="369" height="20" uuid="117887fe-112d-4ed2-a0c3-0973f270c72e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Fee_paid}+" Rupees /="]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

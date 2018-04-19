@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ca34fca-b043-4904-b30e-772091672f26">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM Fee_Info where Date_of_Entry between '" + (month == 1? year - 1: year)+"-"+(month == 1? 12: month-1)+"-"+date1+"' and '"+year+"-"+month+"-"+date1+"' and Fee_Debt > 0]]>
+	</queryString>
+	<field name="Roll_No" class="java.lang.Integer"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Father_Name" class="java.lang.String"/>
+	<field name="Class" class="java.lang.String"/>
+	<field name="Date_of_Entry" class="java.lang.String"/>
+	<field name="Test_Passed" class="java.lang.Integer"/>
+	<field name="Fee_Package" class="java.lang.String"/>
+	<field name="Actual_Fee" class="java.lang.Integer"/>
+	<field name="Calculated_Fee" class="java.lang.Integer"/>
+	<field name="Fee_Paid" class="java.lang.Integer"/>
+	<field name="Fee_Debt" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="284" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

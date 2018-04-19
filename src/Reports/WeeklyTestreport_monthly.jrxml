@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="roll_no" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Grade" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Month" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from WeeklyTestTable where Roll_No=$P{roll_no}  AND Class=$P{Grade} AND month(Date_of_Entry)=$P{date}]]>
+	</queryString>
+	<field name="Roll_No" class="java.lang.Integer"/>
+	<field name="Class" class="java.lang.String"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Date_of_Entry" class="java.sql.Date"/>
+	<field name="Marks" class="java.lang.Double"/>
+	<field name="Subject" class="java.lang.String"/>
+	<variable name="RowCount" class="java.lang.String" calculation="Count"/>
+	<variable name="variable1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{Marks}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="204" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="33" width="555" height="28"/>
+				<textElement textAlignment="Center">
+					<font size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[WEEKLY TESTS REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="73" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="104" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Class:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="135" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Roll Number:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="135" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Roll_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="73" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="104" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Class}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="169" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Month:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="169" width="287" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Month}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="555" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="20" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SIR SYED COACHING CENTER]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="30"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="232" y="0" width="155" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="0" width="155" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="0" width="168" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Entry]]></text>
+			</staticText>
+			<line>
+				<reportElement x="231" y="0" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="387" y="0" width="1" height="30"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="0" width="75" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Test Number]]></text>
+			</staticText>
+			<line>
+				<reportElement x="76" y="0" width="1" height="30"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField pattern="d/M/yyyy">
+				<reportElement x="388" y="3" width="167" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date_of_Entry}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="3" width="130" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="3" width="155" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marks}+"/15"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement x="387" y="0" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement x="555" y="0" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement x="0" y="26" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement x="231" y="0" width="1" height="27"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="0" width="75" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}+")"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="76" y="0" width="1" height="27"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
